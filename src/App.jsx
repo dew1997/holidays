@@ -1,8 +1,9 @@
 import { useState } from "react";
+const SERVER = import.meta.env.VITE_SERVER;
 
 function App() {
   const [msg, setMsg] = useState();
-  fetch("http://localhost:4000/")
+  fetch(SERVER)
     .then((response) => response.json())
     .then((data) => console.log(data.msg));
 
