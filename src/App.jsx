@@ -5,12 +5,12 @@ function App() {
   const [msg, setMsg] = useState();
   fetch(SERVER)
     .then((response) => response.json())
-    .then((data) => console.log(data.msg));
+    .then((data) => setMsg(data.msg));
 
   return (
     <div className="App">
       <h1>Hello world</h1>
-      {/* <h2>{msg}</h2> */}
+      <h2>{msg}</h2>
     </div>
   );
 }
